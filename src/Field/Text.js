@@ -1,5 +1,6 @@
 import React from 'react';
 import { changeHandler } from '../utils';
+import InputMask from "react-input-mask";
 
 const Text = ({ config, formik, value = '', error }) => {
     const {
@@ -8,9 +9,11 @@ const Text = ({ config, formik, value = '', error }) => {
         attributes,
         fieldType,
         defaultValue,
+        mask,
         icon,
         fieldClass = 'form-control',
         inputGroupClass = 'input-group'
+        
     } = config;
 
     const { handleChange, handleBlur } = formik;
@@ -24,8 +27,9 @@ const Text = ({ config, formik, value = '', error }) => {
                         <i className={ icon }></i>
                     </span>
                 </div>
-                <input
+                <InputMask
                     id={ name }
+                    mask={ mask } 
                     name={ name }
                     type={ fieldType }
                     className={ fieldClass + ( error ? ' is-invalid ' : '' ) }
@@ -35,8 +39,9 @@ const Text = ({ config, formik, value = '', error }) => {
                     { ...attributes }
                 />
             </div> :
-            <input
+            <InputMask
                 id={ name }
+                mask={ mask } 
                 name={ name }
                 type={ fieldType }
                 className={ fieldClass + ( error ? ' is-invalid ' : '' ) }

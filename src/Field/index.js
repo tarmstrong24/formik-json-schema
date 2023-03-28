@@ -11,6 +11,7 @@ import InnerText from './InnerText';
 import CodeEditor from './CodeEditor';
 import ReactSelect from './ReactSelect';
 import FileUploader from './FileUploader';
+import Signature from './Signature';
 import Autocomplete from './Autocomplete';
 
 [
@@ -33,3 +34,4 @@ registerField('code-editor', CodeEditor);
 registerField('react-select', ReactSelect);
 registerField('autocomplete', Autocomplete);
 registerField('file-uploader', FileUploader);
+registerField('signature', Signature);
